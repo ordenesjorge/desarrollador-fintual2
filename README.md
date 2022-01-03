@@ -6,14 +6,14 @@ Assume each Stock has a "Price" method that receives a date and returns its pric
 Bonus Track: make the Profit method return the "annualized return" of the portfolio between the given dates.
 
 -----
-La tarea se aborda en el lenguaje Python
+La tarea se aborda en el lenguaje Python.
 
-En primer lugar se genera un script con el nombre de genera_dataset.py donde se genera el archivo data.csv, el cual contiene la información de precios diaria para 3 acciones, AAPL, NVDA y TSLA, utilizando sus precios iniciales como base y generando precios aleatorios desde la fecha de lanzamiento de dichas acciones hasta el 2022-01-01
+En primer lugar se genera un script con el nombre de genera_dataset.py donde se genera el archivo data.csv, el cual contiene la información de precios diaria para 3 acciones, AAPL, NVDA y TSLA, utilizando sus precios iniciales como base y generando precios aleatorios desde la fecha de lanzamiento de dichas acciones hasta el 2022-01-01.
 
 Posteriormente utilizando flask, se genera una pequeña aplicación web, donde es posible ingresar la compra de acciones al portafolio, con el nombre, cantidad y fecha de compra. Además, dado dos fechas seleccionadas se permite calcular el profit del portafolio y el retorno anualizado.
 
 -----
-Para replicar el ambiente utilizado y ejecutar la aplicación se deben seguir los siguientes pasos
+Para replicar el ambiente utilizado y ejecutar la aplicación se deben seguir los siguientes pasos:
 
 1. conda create --name fintual --file requirements.txt
 2. conda activate fintual
