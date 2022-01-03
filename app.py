@@ -10,6 +10,7 @@ app = Flask(__name__)
 
 # read data of stocks
 data = pd.read_csv('data.csv', parse_dates=['date'])
+latest_data_date = data['date'].max()
 
 # create stock objects
 stocks = {}
@@ -45,7 +46,7 @@ def addstock():
     date = np.datetime64(features[2])
 
     if stocks[features[0]].price(date) == None:
-        return render_template('index.html', addstock_text='Stock did not exist on selected date.')
+        return render_template('index.html', addstock_text='There is not data for the stock on the selected date.')
 
     # open portfolio object
     with open('portfolio_data', 'rb') as f:
@@ -89,6 +90,8 @@ def getprofit():
     # check if dates make sense
     if initial_date >= final_date:
         return render_template('index.html', getprofit_text='Initial date must be lower than final date.')
+    if final_date > latest_data_date:
+        return render_template('index.html', getprofit_text='There is no data for final date, max date available is {}.'.format(latest_data_date.strftime('%Y-%m-%d')))   
 
     # open portfolio object
     with open('portfolio_data', 'rb') as f:
