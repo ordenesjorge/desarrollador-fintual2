@@ -10,6 +10,7 @@ app = Flask(__name__)
 
 # read data of stocks
 data = pd.read_csv('data.csv', parse_dates=['date'])
+# data is supposed to have same max date
 latest_data_date = data['date'].max()
 
 # create stock objects
