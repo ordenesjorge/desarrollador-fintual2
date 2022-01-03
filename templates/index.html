@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Fintual by G. Nicolás Villalobos Zaid</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body style="background: rgb(0, 0, 0);">
+    <div id='container'>
+        <div class="login">
+            <h1>Add stocks here (AAPL, NVDA, TSLA)</h1>
+        
+            <!-- add stock form -->
+            <form action="{{ url_for('addstock')}}"method="post">
+                <input type="text" name="name" placeholder="Stock name" required="required" />
+                <input type="text" name="number" placeholder="Number of stocks" required="required" />
+                <input type="text" name="date" placeholder="Date of purchase (yyyy-mm-dd)" required="required" />
+        
+                <button type="submit" class="btn btn-primary btn-block btn-large">Add stock to portfolio</button>
+            </form>
+        
+            <br>
+            {{ addstock_text }}
+        
+        </div>
+    </div>
+    
+    <div id='container'>
+        <div class="login">
+            <h1>Get profit between dates</h1>
+
+            <!-- get profit form -->
+            <form action="{{ url_for('getprofit')}}"method="post">
+                <input type="text" name="initial_date" placeholder="Initial date (yyyy-mm-dd)" required="required" />
+                <input type="text" name="final_date" placeholder="Final date (yyyy-mm-dd)" required="required" />
+
+                <button type="submit" name="profit" value="getprofit" class="btn btn-primary btn-block btn-large">Get profit</button>
+                <button type="submit" name="profit" value="getanualprofit" class="btn btn-primary btn-block btn-large">Get annualized return</button>
+            </form>
+
+            <br>
+            {{ getprofit_text }}
+
+        </div>             
+    </div>
+
+</body>
+</html>
