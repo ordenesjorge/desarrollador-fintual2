@@ -22,3 +22,4 @@ Para replicar el ambiente utilizado y ejecutar la aplicación se deben seguir lo
 
 -----
 El portafolio se resetea si se recarga la pagina web ya que se vuelve a crear el objeto incial de portafolio, por lo que es un comportamiento deseado.
+-----
