@@ -14,7 +14,7 @@ data = pd.read_csv('data.csv', parse_dates=['date'])
 stocks = {}
 for name in data['name'].unique():
     stocks[name] = Stock(name, data[data['name'] == name].copy())
-
+sdfssdf
 # create portfolio
 p = Portfolio()
 
